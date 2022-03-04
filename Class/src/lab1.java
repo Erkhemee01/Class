@@ -18,6 +18,7 @@ public class lab1 {
  double A;
  A= PI*r*r;
  System.out.printf("Area of "+ r + " is " + A);
+ System.out.printf("Just checking...");
  in.close();
  }
 }
