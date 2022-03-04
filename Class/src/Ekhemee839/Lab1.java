@@ -1,8 +1,9 @@
+package Ekhemee839;
 import java.util.Scanner;
-public class lab1 {
+public class Lab1 {
  private static final double PI = 3.14;
  private final double radius;
- public lab1 (double radius) {
+ public Lab1 (double radius) {
  this.radius = radius;
  }
  public static void main(String[] args) {
