@@ -126,12 +126,11 @@ public class ArrayLinearList{
 	break;
 	}
 	case 5:{
-	System.out.print("Элементийг жагсаалтын хэд дэх индекст оруулах вэ?");
+	System.out.print("Элементийг жагсаалтанд ямар тоо оруулах вэ?");
 	int index = sc.nextInt();
-	System.out.println("Нэмэх элементийн утга");
+	System.out.println("Амжилттай нэмэгдлээ");
 	int value = sc.nextInt();
 	mylist.add(index, value);
-
 	break;
 	}
 	case 6: {
