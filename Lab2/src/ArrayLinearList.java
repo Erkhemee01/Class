@@ -1,20 +1,22 @@
 import java.util.Scanner;
 
-public class ArrayLinearList<E> {
-	 private E[] element;
+public class ArrayLinearList<G> {
+	 private G[] element;
 	 private int size;
 
 	 public ArrayLinearList(int n)
 			{
-				element = new Object[n];
+				element = (G[]) new Object[n];
 			}
 
 	 public ArrayLinearList()
 	 		{
-		 		this(100);
+		 	Scanner sc = new Scanner(System.in);
+			System.out.println("Insert the length of Index:");
+			int index = sc.nextInt();
 	 		}
 
-	 public boolean isEmpty()
+	public boolean isEmpty()
 	 		{
 		 		return size == 0;
 	 		}
@@ -24,25 +26,23 @@ public class ArrayLinearList<E> {
 		 		return size;
 	 		}
 //aaaaa
-	 public Object get(int index)
+	 public G get(int index)
 	 		{
 		 		return element[index];
 	 		}
 
-	 public void add(int index, Object theElement)
+	public void add(int index, G theElement)
 	 		{
-	if (size == element.length) {
-
-	}
-
+	if (size == element.length) {}
 	for (int i = size - 1; i >= index; i--)
 	element[i + 1] = element[i];
 	element[index] = theElement;
 	size++;
 	}
-	public Object remove(int index)
+	 
+	public G remove(int index)
 	{
-	Object removedElement = element[index];
+	G removedElement = element[index];
 	for (int i = index + 1; i < size; i++)
 	{
 	element[i-1] = element[i];
@@ -58,7 +58,7 @@ public class ArrayLinearList<E> {
 
 	for (int i = 0; i < size; i++)
 	if (element[i] == null)
-	s.append("null, ");
+	s.append("Хоосон байна");
 	else
 	s.append(element[i].toString() + ", ");
 
@@ -81,71 +81,75 @@ public class ArrayLinearList<E> {
 	}
 	public static void main(String[] args) {
 	// TODO Auto-generated method stub
-	System.out.println("ÐšÐ¾Ð¼Ð°Ð½Ð´:");
 	System.out.println("\t1. isEmpty\n\t2. size \n\t3. get \n\t4. remove \n\t5. add \n\t6. toString \n\t7. max \n");
 
 	Scanner sc = new Scanner(System.in);
 	ArrayLinearList mylist = new ArrayLinearList();
 
 	while(true) {
-		System.out.print("Ð¡Ð¾Ð½Ð³Ð¾Ð»Ñ‚: ");
-		int songolt = sc.nextInt();
-	
-		switch(songolt) {
-		case 1: {
-		System.out.println(mylist.isEmpty());
-		break;
-		}
+	System.out.print("Хариу:");
+	int songolt = sc.nextInt();
+
+	switch(songolt) {
+	case 1: {
+	System.out.println(mylist.isEmpty());
+	break;
+	}
 	
 	case 2:{
-		System.out.println(mylist.size());
-		break;
+	System.out.println(mylist.size());
+	break;
 	}
 	
 	case 3: {
-		// get()
-		System.out.print("Ð¥Ð°Ð¹Ñ… Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð¸Ð¹Ð½ Ð¸Ð½Ð´ÐµÐºÑ�: ");
-		int index = sc.nextInt();
-		if(index < mylist.size())
-		System.out.println(mylist.get(index));
-		else
-		System.out.println(index + " Ð³Ñ�Ñ�Ñ�Ð½ Ð¸Ð½Ð´ÐµÐºÑ� Ð´Ñ�Ñ�Ñ€ ÑƒÑ‚Ð³Ð° Ñ…Ð°Ð´Ð³Ð°Ð»Ð°Ð³Ð´Ð°Ð°Ð³Ò¯Ð¹.");
-		break;
+	// get()
+		//83
+	System.out.print("Авах элементийн утгыг оруулна уу");
+	int index = sc.nextInt();
+	if(index < mylist.size())
+	System.out.println(mylist.get(index));
+	else
+	System.out.println(index + " байхгүй байна");
+	break;
 	}
 	
 	case 4: {
-		//remove
-		System.out.print("Ð£Ñ�Ñ‚Ð³Ð°Ñ… Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð¸Ð¹Ð½ Ð¸Ð½Ð´ÐµÐºÑ�: ");
-		int index = sc.nextInt();
-		if(index < mylist.size())
-		System.out.println(mylist.remove(index) + " Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð¸Ð¹Ð³ ÑƒÑ�Ñ‚Ð³Ð°Ð»Ð°Ð°.");
-		else
-		System.out.println("Ð£Ñ�Ñ‚Ð³Ð°Ñ… Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚ Ð¾Ð»Ð´Ñ�Ð¾Ð½Ð³Ò¯Ð¹.");
-		break;
+	//remove
+	System.out.print("Устгах элементийн утгыг оруулна уу");
+	int index = sc.nextInt();
+	if(index < mylist.size())
+	System.out.println(mylist.remove(index) + " дэх индексийг амжилттай устгалаа");
+	else
+	System.out.println("Олдсонгүй");
+	break;
 	}
 	
 	case 5:{
-		System.out.print("Ð�Ñ�Ð¼Ñ�Ñ… Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚Ð¸Ð¹Ð½ Ð¸Ð½Ð´ÐµÐºÑ�: ");
-		int index = sc.nextInt();
-		System.out.println("Ð�Ñ�Ð¼Ñ�Ñ… Ñ�Ð»ÐµÐ¼ÐµÐ½Ñ‚: ");
-		int value = sc.nextInt();
-		mylist.add(index, value);
-		break;
+	System.out.print("Элементийг жагсаалтын хэд дэх индекст оруулах вэ?");
+	int index = sc.nextInt();
+	if(index>10){System.out.println("Боломжгүй");}
+	else {System.out.println("Нэмэх элементийн утга:");
+	int value = sc.nextInt();
+	mylist.add(index, value);}
+	break;
 	}
 	
 	case 6: {
-		System.out.println(mylist.toString());
-		break;
+	System.out.println(mylist.toString());
+	break;
 	}
 	
 	case 7: {
-		if(mylist.isEmpty())
-		System.out.println("Ð–Ð°Ð³Ñ�Ð°Ð°Ð»Ñ‚ Ñ…Ð¾Ð¾Ñ�Ð¾Ð½ Ð±Ð°Ð¹Ð½Ð°.");
-		else
-		System.out.println(mylist.max());
-		break;
+	if(mylist.isEmpty())
+	System.out.println("Элементийн жагсаалт дах хамгийн их утга: ");
+	else
+	System.out.println(mylist.max());
+	break;
+	
 	}
 	}
 	}
 	}
+
+
 }
